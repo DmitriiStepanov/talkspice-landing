@@ -11,6 +11,39 @@ function scrollToDemo() {
     });
 }
 
+// Открытие видео в новой вкладке
+function openVideoLink() {
+    window.open('https://vkvideo.ru/video-232042948_456239017', '_blank');
+}
+
+// Мобильное меню
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    
+    mobileMenu.classList.toggle('active');
+    menuBtn.classList.toggle('active');
+}
+
+function closeMobileMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    
+    mobileMenu.classList.remove('active');
+    menuBtn.classList.remove('active');
+}
+
+// Закрытие мобильного меню при клике вне его
+document.addEventListener('click', function(event) {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const navbar = document.querySelector('.navbar');
+    
+    if (!navbar.contains(event.target) && mobileMenu.classList.contains('active')) {
+        closeMobileMenu();
+    }
+});
+
 // FAQ аккордеон
 document.addEventListener('DOMContentLoaded', function() {
     const faqItems = document.querySelectorAll('.faq-item');
@@ -51,7 +84,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Наблюдаем за элементами для анимации
 document.addEventListener('DOMContentLoaded', function() {
-    const animatedElements = document.querySelectorAll('.step, .feature-card, .benefit-item, .pricing-card, .report-card');
+    const animatedElements = document.querySelectorAll('.step, .feature-card, .benefit-item, .pricing-card, .report-card, .team-card');
     
     animatedElements.forEach(el => {
         observer.observe(el);

@@ -13,7 +13,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="vector.svg" alt="TalkSpice" class="logo-icon">
+                <img src="Vector.svg" alt="TalkSpice" class="logo-icon">
                 <span>TalkSpice</span>
             </div>
             <div class="nav-menu">
@@ -22,6 +22,17 @@
                 <a href="#pricing">Цены</a>
                 <a href="#contact" class="cta-button">Попробовать</a>
             </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#how-it-works" onclick="closeMobileMenu()">Как работает</a>
+            <a href="#features" onclick="closeMobileMenu()">Возможности</a>
+            <a href="#pricing" onclick="closeMobileMenu()">Цены</a>
+            <a href="#contact" class="mobile-cta-button" onclick="closeMobileMenu()">Попробовать</a>
         </div>
     </nav>
 
@@ -31,7 +42,7 @@
             <div class="hero-content">
                 <h1>Каждое слово гостя — ваш шанс увеличить чек</h1>
                 <p class="hero-subtitle">Подключаемся к вашей телефонии и анализируем все звонки автоматически — повышайте качество сервиса без лишних хлопот</p>
-                <p class="hero-description">🎯 Речевая аналитика для ресторанов и кафе. Интеграция с любой телефонией. Автоматические отчёты.</p>
+               
                 <div class="hero-buttons">
                     <button class="btn-primary" onclick="scrollToContact()">
                         <i class="fas fa-play"></i>
@@ -66,11 +77,25 @@
             <h2>Автоматический анализ звонков из телефонии</h2>
             <div class="video-container">
                 <div class="video-wrapper">
-                    <video controls poster="video-poster.jpg">
-                        <source src="talkspice-demo.mp4" type="video/mp4">
-                        <source src="talkspice-demo.webm" type="video/webm">
-                        Ваш браузер не поддерживает видео.
-                    </video>
+                    <!-- Замените oid и id на ваши значения после загрузки на VK Video -->
+                    <iframe src="https://vk.com/video_ext.php?oid=-232042948&id=456239017&hd=2&autoplay=0" 
+                            width="100%" 
+                            height="360" 
+                            frameborder="0" 
+                            allowfullscreen 
+                            allow="autoplay; encrypted-media">
+                    </iframe>
+                    <!-- Альтернативный вариант: заглушка пока видео не загружено -->
+                    <!-- 
+                    <div class="video-placeholder">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <h3>Демо видео TalkSpice</h3>
+                        <p>Видео загружается на VK Video...</p>
+                        <small>После загрузки видео на VK, замените ссылку выше</small>
+                    </div>
+                    -->
                 </div>
                 <div class="video-description">
                     <h3>Подключаемся к любой телефонии — анализируем автоматически</h3>
@@ -310,14 +335,80 @@
     <section class="testimonials">
         <div class="container">
             <h2>Что говорят клиенты</h2>
-            <div class="testimonial-card">
-                <div class="quote">
-                    <i class="fas fa-quote-left"></i>
-                    <p>«TalkSpice помог понять, кто работает по скриптам, а кто игнорирует гостей.»</p>
-                    <i class="fas fa-quote-right"></i>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>«TalkSpice помог понять, кто работает по скриптам, а кто игнорирует гостей.»</p>
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>— Роман, управляющий несколькими точками сети «Старик Хинкалыч», Санкт-Петербург</strong>
+                    </div>
                 </div>
-                <div class="testimonial-author">
-                    <strong>— Роман, управляющий несколькими точками сети «Старик Хинкалыч», Санкт-Петербург</strong>
+                
+                <div class="testimonial-card">
+                    <div class="quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>«После внедрения TalkSpice средний чек вырос на 23%. Теперь точно знаем, какие фразы работают.»</p>
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>— Анна, директор сети ресторанов, Москва</strong>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>«Жалобы гостей сократились в 2 раза. TalkSpice выявляет проблемы до того, как они станут критичными.»</p>
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>— Михаил, владелец ресторана, Сочи</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Команда -->
+    <section class="team">
+        <div class="team-background">
+            <div class="glass-effect"></div>
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+            </div>
+        </div>
+        <div class="container">
+            <h2>Команда TalkSpice</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-photo" style="background-image: url('Photos/Дима.png')"></div>
+                    <h3 class="team-name">Дмитрий</h3>
+                    <p class="team-role">CPO — Chief Product Officer</p>
+                    <p class="team-description">Отвечает за стратегию продукта и внедрение ИИ в сервис.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo roman-photo" style="background-image: url('Photos/Роман.png')"></div>
+                    <h3 class="team-name">Роман</h3>
+                    <p class="team-role">COO — Chief Operating Officer</p>
+                    <p class="team-description">Курирует операционные процессы и работу сервиса в ресторанах.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo" style="background-image: url('Photos/Богдан.png')"></div>
+                    <h3 class="team-name">Богдан</h3>
+                    <p class="team-role">CBDO — Chief Business Development Officer</p>
+                    <p class="team-description">Развивает партнёрства и продажи, расширяет охват сервиса.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo" style="background-image: url('Photos/Никита.png')"></div>
+                    <h3 class="team-name">Никита</h3>
+                    <p class="team-role">CTO — Chief Technology Officer</p>
+                    <p class="team-description">Создаёт и поддерживает техническую архитектуру, интеграции и безопасность.</p>
                 </div>
             </div>
         </div>
@@ -344,7 +435,7 @@
 
                 <div class="pricing-card featured">
                     <div class="pricing-header">
-                        <span class="badge-popular">Самое популярное</span>
+
                         <h3>Standard</h3>
                         <div class="price">8 400 ₽/мес</div>
                         <div class="price-sub">3000 минут в месяц • 1 точка</div>
@@ -423,15 +514,6 @@
             <div class="faq-list">
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>Какие записи можно загружать?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Любые аудиофайлы: записи с камер наблюдения, телефонов, диктофонов. Поддерживаем основные форматы: MP3, WAV, M4A.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
                         <h3>Это законно?</h3>
                         <i class="fas fa-chevron-down"></i>
                     </div>
@@ -476,14 +558,14 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <img src="vector.svg" alt="TalkSpice" class="logo-icon">
+                        <img src="Vector.svg" alt="TalkSpice" class="logo-icon">
                         <span>TalkSpice</span>
                     </div>
                     <p>Речевая аналитика для ресторанов</p>
                 </div>
                 <div class="footer-section">
                     <h4>Контакты</h4>
-                    <p><i class="fas fa-envelope"></i>stepanov.dims@gmail.com</p>
+                    <p><i class="fas fa-envelope"></i>info@talkspice.ru</p>
                     <p><i class="fas fa-phone"></i> +7 (931) 366-05-75</p>
                 </div>
                 <div class="footer-section">
