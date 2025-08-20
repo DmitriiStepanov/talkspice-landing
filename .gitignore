@@ -2,32 +2,31 @@
 .DS_Store
 Thumbs.db
 
-# Логи
-*.log
-
 # Временные файлы
 *.tmp
 *.temp
-
-# IDE файлы
-.vscode/
-.idea/
-
-# Node modules (если понадобится)
-node_modules/
-
-# Видео файлы (большие)
-*.mp4
-*.webm
-*.mov
-
-# Изображения (если большие)
-*.jpg
-*.jpeg
-*.png
-*.gif
+*.log
 
 # Архивы
 *.zip
 *.rar
-*.7z 
+*.tar.gz
+
+# IDE файлы
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node.js (если понадобится в будущем)
+node_modules/
+npm-debug.log*
+
+# Локальные настройки
+.env
+.env.local
+
+# Файлы для загрузки
+UPLOAD_INSTRUCTIONS.md
+REG_RU_DEPLOYMENT.md
+deploy.sh 
