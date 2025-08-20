@@ -784,105 +784,64 @@ section h2 {
 
 /* Отзывы */
 .testimonials {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    padding: 5rem 0;
-    position: relative;
-    overflow: hidden;
-}
-
-.testimonials::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23F25C05" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23F25C05" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="%23F25C05" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-    opacity: 0.3;
-}
-
-.testimonials .container {
-    position: relative;
-    z-index: 2;
-}
-
-.testimonials-header {
-    text-align: center;
-    margin-bottom: 4rem;
-}
-
-.testimonials-header h2 {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #1d1d1f;
-    margin-bottom: 1rem;
-}
-
-.testimonials-subtitle {
-    font-size: 1.2rem;
-    color: #86868b;
-    font-weight: 500;
+    background: #F2F2F2;
 }
 
 .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-top: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.testimonial-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1.5rem;
-    background: #F2F2F2;
-    border-radius: 15px;
-    text-align: left;
+.testimonial-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 25px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
 }
 
-.testimonial-item:hover {
-    background: white;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+    border-color: #F25C05;
 }
 
-.testimonial-item i {
-    font-size: 1.5rem;
-    color: #F25C05;
-    min-width: 30px;
-    margin-top: 0.2rem;
-}
-
-.testimonial-content {
-    flex: 1;
-}
-
-.testimonial-content p {
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #1d1d1f;
+.quote {
+    font-size: 1.4rem;
     font-style: italic;
-    margin: 0 0 1rem 0;
+    margin-bottom: 2rem;
+    color: #1d1d1f;
+    position: relative;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.quote i:first-child {
+    color: #F25C05;
+    font-size: 2rem;
+    position: absolute;
+    top: -10px;
+    left: -20px;
+}
+
+.quote i:last-child {
+    color: #F25C05;
+    font-size: 2rem;
+    position: absolute;
+    bottom: -10px;
+    right: -20px;
 }
 
 .testimonial-author {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-}
-
-.testimonial-author strong {
     color: #F25C05;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 600;
-}
-
-.testimonial-author span {
-    color: #86868b;
-    font-size: 0.9rem;
-    font-weight: 500;
 }
 
 /* Команда */
@@ -1384,18 +1343,6 @@ section h2 {
     font-size: 0.9rem;
 }
 
-/* Адаптивность для планшетов */
-@media (max-width: 1024px) {
-    .testimonials-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-    }
-    
-    .testimonial-card.featured {
-        grid-column: 1 / -1;
-    }
-}
-
 /* Адаптивность */
 @media (max-width: 768px) {
     /* Навигация */
@@ -1603,23 +1550,32 @@ section h2 {
     /* Отзывы */
     .testimonials-grid {
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: 1.5rem;
     }
     
-    .testimonial-item {
-        padding: 1.2rem;
+    .testimonial-card {
+        padding: 2rem 1.5rem;
     }
     
-    .testimonial-content p {
-        font-size: 0.95rem;
+    .quote {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
     }
     
-    .testimonial-author strong {
-        font-size: 0.95rem;
+    .quote i:first-child,
+    .quote i:last-child {
+        font-size: 1.5rem;
+        top: -8px;
+        left: -15px;
     }
     
-    .testimonial-author span {
-        font-size: 0.85rem;
+    .quote i:last-child {
+        bottom: -8px;
+        right: -15px;
+    }
+    
+    .testimonial-author {
+        font-size: 1rem;
     }
     
     /* Команда */

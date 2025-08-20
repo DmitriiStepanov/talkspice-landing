@@ -298,6 +298,4 @@ document.addEventListener('DOMContentLoaded', function() {
     counters.forEach(counter => {
         counterObserver.observe(counter);
     });
-});
-
- 
+}); 
